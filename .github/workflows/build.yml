@@ -20,4 +20,4 @@ jobs:
         with:
           name: asciigraph
           path: |
-            target/release/asciigraph-rs
+            target/release/asciigraph

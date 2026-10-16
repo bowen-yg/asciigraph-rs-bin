@@ -39,7 +39,7 @@ required-features = ["serde"]
 [profile.release]
 lto = true
 debug = false
-panic = "abort"
+#panic = "abort"
 opt-level = 2
 strip = true
 
