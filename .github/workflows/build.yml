@@ -1,0 +1,23 @@
+name: Build
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    step:
+      - name: Check code
+        uses: actions/checkout@v4
+      - name: Install rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Install mold
+        uses: rui314/setup-mold@v1
+
+      - name: Build
+        run: cargo build --release
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: asciigraph
+          path: |
+            target/release/asciigraph-rs

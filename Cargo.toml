@@ -35,3 +35,15 @@ serde = ["dep:serde"]
 [[example]]
 name = "serde_config"
 required-features = ["serde"]
+
+[profile.release]
+lto = true
+debug = false
+panic = "abort"
+opt-level = 2
+strip = true
+
+[profile.release.package."*"]
+opt-level = 2
+debug = false
+strip = true
